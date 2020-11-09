@@ -480,8 +480,10 @@ def gen_natural_collision(ex, model, tokenizer, device, lm_model, eval_lm_model=
                 best_score = curr_score
                 best_collision = curr_collision
                 best_rank = curr_rank
-            lm_perp = eval_lm_model.perplexity(curr_collision)
-            log(f'LM perp={lm_perp.item()}')
+
+            if args.verbose:
+                lm_perp = eval_lm_model.perplexity(curr_collision)
+                log(f'LM perp={lm_perp.item()}')
 
     return best_collision, best_score, best_rank
 

@@ -6,4 +6,3 @@ def log(msg):
         msg += '\n'
     sys.stderr.write(msg)
     sys.stderr.flush()
-

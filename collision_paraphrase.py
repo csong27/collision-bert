@@ -199,7 +199,6 @@ def gen_aggressive_collision(inputs_a, model, tokenizer, device, lm_model=None):
             break
         prev_score = curr_score
 
-    print(f'Unnatural best score={best_score}, collision={best_collision}, target={inputs_a}')
     return best_collision, best_score
 
 
@@ -447,7 +446,7 @@ def main():
             msg = f'Input={inputs.text_a}\n' \
                   f'Ground truth paraphrase={inputs.text_b}\n' \
                   f'Collision={collision}\n' \
-                  f'Similarity core={score}\n' \
+                  f'Confidence of being paraphrase={score}\n' \
                   f'LM perp={lm_perp.item()}\n'
             log(msg)
 

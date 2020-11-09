@@ -1,8 +1,7 @@
 import argparse
 import os
-from constant import SAVE_DATA_DIR
+from constant import PRESUMM_DIR
 
-PRESUMM_DIR = os.path.join(SAVE_DATA_DIR, 'presumm')
 DATA_DIR = os.path.join(PRESUMM_DIR, 'data')
 MODEL_DIR = os.path.join(PRESUMM_DIR, 'models')
 MODEL_PATH = os.path.join(MODEL_DIR, 'bertext_cnndm_transformer_ckpt.pt')

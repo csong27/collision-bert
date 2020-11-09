@@ -559,7 +559,7 @@ def main():
 
         lm_perp = eval_lm_model.perplexity(collision)
         msg = f'Query={query}\n' \
-              f'Best true sentence={best_sent}\n' \
+              f'Best true sentences={best_sent}\n' \
               f'Best similarity score={best_score}\n' \
               f'Collision={collision}\n' \
               f'Similarity core={new_score}\n' \

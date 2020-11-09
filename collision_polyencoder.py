@@ -508,7 +508,7 @@ def main():
         scores = np.asarray([score] + scores)
         n = len(scores)
         ranks = np.empty(n)
-        ranks[np.argsort(-scores)] = np.arange(n) + 1
+        ranks[np.argsort(-scores)] = np.arange(n)
 
         lm_perp = eval_lm_model.perplexity(collision)
         msg = f'Input={query}\n' \
