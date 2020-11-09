@@ -3,11 +3,11 @@ This repo contains implementation for EMNLP 2020 paper:
 [Adversarial Semantic Collisions](http://www.cs.cornell.edu/~shmat/shmat_emnlp20.pdf).
 ![method](assets/method.png)
 
-### Dependencies
+## Dependencies
 The code is tested on Python 3 with torch==1.4.0 and transformers==2.8.0. 
 Other requirements can be found in `requirements.txt`.
 
-### Datasets and Models
+## Datasets and Models
 We considered four tasks in this paper. The data and models can be downloaded from [here](https://zenodo.org/record/4263446#.X6iYUnVKjCJ) (the decompressed file can take upto 18GB of disk space).
 Please extract the data and models into `COLLISION_DIR` defined in `constant.py`.
 
@@ -17,14 +17,14 @@ Please extract the data and models into `COLLISION_DIR` defined in `constant.py`
 * For extractive summarization task, the models are collected from [PreSumm](https://github.com/nlpyang/PreSumm).
 
 
-### Language Models for Natural Collisions
+## Language Models for Natural Collisions
 For generating natural collisions (see Section 4.2.2 in our paper), we need to train language models (LMs) with the same
-vocabulary as the target models we are attacking.  
+vocabulary as the target models we are attacking. 
 We provide pre-trained LMs in the download link above and their training scripts in `scipts/` folder. 
 LMs are fine-tuned from BERT or [Poly-encoder](https://arxiv.org/pdf/1905.01969.pdf) on [WikiText-103](https://www.salesforce.com/products/einstein/ai-research/the-wikitext-dependency-language-modeling-dataset/).
 
 
-### Generating Semantic Collisions
+## Generating Semantic Collisions
 Now we can run collision attacks on the test set for the four tasks.
 We provide example scripts for as following, where (A), (R), (N) denotes aggressive, 
 regularized and natural collisions respectively.
@@ -35,7 +35,7 @@ Add `--verbose` flag if you want to check the intermediate procedure of generati
 Remove `--fp16` flag if you did not install [apex](https://github.com/NVIDIA/apex) for mixed precision training.
 Set `--gpu=i` to use the i'th GPU. 
 
-**Paraphrase Identification** 
+### **Paraphrase Identification** 
 ```
 (A) python3 collision_paraphrase.py --topk=30 --perturb_iter=30 --max_iter=10 --stemp=1.0 --lr=1e-3 --seq_len=20 --fp16
 
@@ -44,7 +44,7 @@ Set `--gpu=i` to use the i'th GPU.
 (N) python3 collision_paraphrase.py --topk=128 --perturb_iter=5 --stemp=0.1 --lr=1e-3 --seq_len=25 --nature --beta=0.05 --fp16
 ```
 
-**Response Suggestions**
+### **Response Suggestions**
 ```
 (A) python3 collision_polyencoder.py --topk=30 --perturb_iter=30 --stemp=1.0 --lr=1e-3 --seq_len=20 --poly --num_filters=1000 --fp16
 
@@ -54,7 +54,7 @@ Set `--gpu=i` to use the i'th GPU.
 ```
 Remove `--poly` flag if you want to attack the Bi-encoder model.
 
-**Document Retrieval** 
+### **Document Retrieval** 
 ```
 (A) python3 collision_retrieval.py --num_beams=5 --topk=50 --perturb_iter=30 --stemp=1.0 --lr=1e-3 --seq_len=30 --num_filters=1000 --fp16
 
@@ -66,7 +66,7 @@ Remove `--poly` flag if you want to attack the Bi-encoder model.
 The default dataset is Core17, change `--data_name=core18` flag if you want to generate collisions for Core18.
 Add `--verbose` flag to see how the document ranks change after inserting collisions.  
 
-**Extractive Summarization** 
+### **Extractive Summarization** 
 ```
 (A) python3 collision_ext_sum.py --num_beams=5 --topk=10 --perturb_iter=30 --stemp=1.0 --lr=1e-3 --seq_len=15 --fp16
 
@@ -75,9 +75,9 @@ Add `--verbose` flag to see how the document ranks change after inserting collis
 (N) python3 collision_ext_sum.py --num_beams=5 --topk=64 --perturb_iter=5 --stemp=1.0 --lr=1e-3 --seq_len=20 --beta=0.02 --nature --fp16
 ```
 
-**Interactive Mode**
+### **Interactive Mode**
 
 TODO
 
-### Reference
+## Reference
 TODO
