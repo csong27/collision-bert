@@ -1,7 +1,7 @@
 import os
 
-COLLISION_DIR = os.environ.get('COLLISION_DIR', '/hdd/song/collision/')
-assert os.path.exists(COLLISION_DIR)
+COLLISION_DIR = os.environ.get('COLLISION_DIR', 'collision/')
+assert os.path.exists(COLLISION_DIR), 'Please create a directory for extracting data and models.'
 
 BOS_TOKEN = '[unused0]'
 EOS_TOKEN = '[unused1]'
