@@ -11,13 +11,14 @@ Other requirements can be found in `requirements.txt`.
 We considered four tasks in this paper. The data and models can be downloaded from [here](https://zenodo.org/record/4263446#.X6iYUnVKjCJ) (the decompressed file can take upto 18GB of disk space).
 Please extract the data and models into `COLLISION_DIR` defined in `constant.py`.
 
+### Target Models
 * For paraphrase identification task, the models are trained with HuggingFace example [scripts](https://github.com/huggingface/transformers/blob/master/examples/text-classification/run_glue.py).
 * For response suggestions task, the models are collected from [ParlAI](https://parl.ai/projects/polyencoder/).
 * For document retrieval task, the models are collected from [Birch](https://github.com/castorini/birch).
 * For extractive summarization task, the models are collected from [PreSumm](https://github.com/nlpyang/PreSumm).
 
 
-## Language Models for Natural Collisions
+### Language Models for Natural Collisions
 For generating natural collisions (see Section 4.2.2 in our paper), we need to train language models (LMs) with the same
 vocabulary as the target models we are attacking. 
 We provide pre-trained LMs in the download link above and their training scripts in `scipts/` folder. 
