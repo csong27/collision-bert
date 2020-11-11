@@ -1,6 +1,6 @@
 # Adversarial Semantic Collisions
 This repo contains implementation for EMNLP 2020 paper: 
-[Adversarial Semantic Collisions](http://www.cs.cornell.edu/~shmat/shmat_emnlp20.pdf).
+[Adversarial Semantic Collisions](https://arxiv.org/pdf/2011.04743.pdf).
 ![method](assets/method.png)
 
 ## Dependencies
