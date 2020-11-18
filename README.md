@@ -81,4 +81,12 @@ Add `--verbose` flag to see how the document ranks change after inserting collis
 TODO
 
 ## Reference
-TODO
+```
+@inproceedings{song2020adversarial,
+  title={Adversarial Semantic Collisions},
+  author={Song, Congzheng and Rush, Alexander M and Shmatikov, Vitaly},
+  booktitle={Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  pages={4198--4210},
+  year={2020}
+}
+```
