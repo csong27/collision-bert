@@ -76,10 +76,6 @@ Add `--verbose` flag to see how the document ranks change after inserting collis
 (N) python3 collision_ext_sum.py --num_beams=5 --topk=64 --perturb_iter=5 --stemp=1.0 --lr=1e-3 --seq_len=20 --beta=0.02 --nature --fp16
 ```
 
-### **Interactive Mode**
-
-TODO
-
 ## Reference
 ```
 @inproceedings{song2020adversarial,
